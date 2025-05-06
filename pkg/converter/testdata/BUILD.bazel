@@ -57,9 +57,10 @@ go_library(
         "second_message.go",
         "self_reference.go",
         "timestamp.go",
+        "type_names_with_no_package.go",
         "validation_options.go",
         "wellknown.go",
     ],
-    importpath = "github.com/chrusty/protoc-gen-jsonschema/internal/converter/testdata",
+    importpath = "github.com/chrusty/protoc-gen-jsonschema/pkg/converter/testdata",
     visibility = ["//:__subpackages__"],
 )
