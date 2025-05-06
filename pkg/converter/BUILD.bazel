@@ -9,7 +9,7 @@ go_library(
         "sourcecodeinfo.go",
         "types.go",
     ],
-    importpath = "github.com/chrusty/protoc-gen-jsonschema/internal/converter",
+    importpath = "github.com/chrusty/protoc-gen-jsonschema/pkg/converter",
     visibility = ["//:__subpackages__"],
     deps = [
         "//:protoc-gen-jsonschema",
@@ -35,7 +35,7 @@ go_test(
     ],
     embed = [":converter"],
     deps = [
-        "//internal/converter/testdata",
+        "//pkg/converter/testdata",
         "@com_github_sirupsen_logrus//:logrus",
         "@com_github_stretchr_testify//assert",
         "@com_github_xeipuuv_gojsonschema//:gojsonschema",
