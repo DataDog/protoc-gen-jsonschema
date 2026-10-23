@@ -1,2 +1,9 @@
 # avoid "C++ versions less than C++14 are not supported." errors
 build --host_cxxopt=-std=c++14
+
+# Keep the existing WORKSPACE dependency setup under Bazel 8.
+common --enable_workspace=true
+common --enable_bzlmod=false
+
+# Preserve Bazel 7 behavior for optional file globs under Bazel 8.
+common --incompatible_disallow_empty_glob=false

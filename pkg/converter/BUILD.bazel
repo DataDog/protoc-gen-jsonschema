@@ -33,6 +33,11 @@ go_test(
         "converter_test.go",
         "sourcecodeinfo_test.go",
     ],
+    data = [
+        "//:options.proto",
+        "//:validate_proto_fixture",
+        "//pkg/converter/testdata:proto_fixtures",
+    ],
     embed = [":converter"],
     deps = [
         "//pkg/converter/testdata",
