@@ -1,0 +1,2 @@
+# This vendored tool is a separate workspace, not a repository build target.
+protoc-gen-validate

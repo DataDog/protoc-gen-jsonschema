@@ -64,3 +64,9 @@ go_library(
     importpath = "github.com/chrusty/protoc-gen-jsonschema/pkg/converter/testdata",
     visibility = ["//:__subpackages__"],
 )
+
+filegroup(
+    name = "proto_fixtures",
+    srcs = glob(["proto/*.proto"]),
+    visibility = ["//pkg/converter:__pkg__"],
+)

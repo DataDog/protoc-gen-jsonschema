@@ -29,4 +29,16 @@ go_library(
     ],
 )
 
-exports_files(["deps.bzl"])
+exports_files([
+    "deps.bzl",
+    "options.proto",
+])
+
+# Match the proto import path without loading the vendored validator workspace.
+genrule(
+    name = "validate_proto_fixture",
+    srcs = ["@com_github_envoyproxy_protoc_gen_validate//validate:validate_src"],
+    outs = ["protoc-gen-validate/validate/validate.proto"],
+    cmd = "cp \"$(execpath @com_github_envoyproxy_protoc_gen_validate//validate:validate_src)\" \"$@\"",
+    visibility = ["//pkg/converter:__pkg__"],
+)
